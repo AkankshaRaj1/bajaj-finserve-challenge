@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { userData } from "@/app/data";
 
 export async function POST(req: Request) {
     try {
@@ -21,9 +22,9 @@ export async function POST(req: Request) {
 
         const response = {
             is_success: true,
-            user_id: "john_doe_17091999",
-            email: "john@xyz.com",
-            roll_number: "ABCD123",
+            user_id: userData?.user_id,
+            email: userData?.email,
+            roll_number: userData?.roll_number,
             numbers,
             alphabets,
             highest_lowercase_alphabet: highestLowercaseAlphabet,
